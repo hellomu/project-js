@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/product-details.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
   <div class="main">
@@ -31,20 +32,19 @@
           <div id="superMask"></div>
         </div>
         <div id="largeDiv"></div>
-        <h1>
+        <h1 data-list="previewList">
           <a class="backward disabled"></a>
           <a class="forward"></a>
           <ul id="icon_list">
-            <img src="img/loading.gif" alt="加载中..." >
             <!-- <li class="i1"><img src="${pic.sm}" data-md="${pic.md}" data-lg="${pic.lg}"></li> -->
           </ul>
         </h1>
       </div>
       <!--3.2 右上 ：文字信息 #show-details width:490px-->
       <div id="show-details">
-        <h1></h1>
+        <h1>${p.title}</h1>
         <h3>
-          <a href="javascript:;">${p.title}</a>
+          <a href="javascript:;">${p.subtitle}</a>
         </h3>
         <div class="price">
           <div class="stu-price">
@@ -52,7 +52,7 @@
             <span>￥${p.price}</span>
           </div>
           <div class="promise">
-            <b>服务承诺：${p.promise}</b>
+            服务承诺：<b>${p.promise}</b>
           </div>
         </div>
         <!-- 客服 -->
@@ -81,12 +81,9 @@
         <div class="shops">
           <a href="javascript:;" class="buy">立即购买</a>
           <a href="javascript:;" class="cart">
-            <img src="img/product_detail/product_detail_img7.png" alt="">
             加入购物车
           </a>
           <a href="javascript:;" class="collection">
-            <img src="img/product_detail/product_detail_img6.png">
-            <br>
             收藏
           </a>
         </div>
@@ -152,37 +149,39 @@
             <li><img src="img/loading.gif" alt="加载中..." ></li>
             <!--
             <li>
-              <a href="javascript:;">商品名称：AppleMacBook Air</a>
+              <a href="javascript:;">商品名称：${p.lname}</a>
             </li>
             <li>
-              <a href="javascript:;">系统：MacOS</a>
+              <a href="javascript:;">系统：${p.os}</a>
             </li>
             <li>
-              <a href="javascript:;">内存容量：8GB</a>
+              <a href="javascript:;">内存容量：${p.memory}</a>
             </li>
             <li>
-              <a href="javascript:;">分辨率：1920:*1080</a>
+              <a href="javascript:;">分辨率：${p.resolution}</a>
             </li>
             <li>
-              <a href="javascript:;">显卡型号：集成显卡</a>
+              <a href="javascript:;">显卡型号：${p.video_card}</a>
             </li>
             <li>
-              <a href="javascript:;">处理器：Intel i5低功耗版</a>
+              <a href="javascript:;">处理器：${p.cpu}</a>
             </li>
             <li>
-              <a href="javascript:;">显存容量：其他</a>
+              <a href="javascript:;">显存容量：${p.video_memory}</a>
             </li>
             <li>
-              <a href="javascript:;">分类：轻薄本</a>
+              <a href="javascript:;">分类：${p.category}</a>
             </li>
             <li>
-              <a href="javascript:;">硬盘容量：128G固态</a>
+              <a href="javascript:;">硬盘容量：${p.disk}</a>
             </li>
             -->
           </ul>
         </div>
         <!--3、商品介绍-->
-        <div id="product-intro"></div>
+        <div id="product-intro">
+          <!--${p.details}-->
+        </div>
         <!--4、售后保障-->
         <div id="sale-protection">
           <p>
@@ -251,5 +250,7 @@
   </div>
 	<script src="js/ajax.js"></script>
 	<script src="js/header.js"></script>
+	<script src="js/products_details.js"></script>
+	<script src="js/footer.js"></script>
 </body>
 </html>

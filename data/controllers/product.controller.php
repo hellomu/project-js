@@ -62,7 +62,7 @@ function getProductById(){
 	global $conn;
 	$output=[];
 	@$lid=$_REQUEST["lid"];
-	$sql="select lid,family_id,price,title,promise,
+	$sql="select lid,family_id,price,title,subtitle,promise,
 		(select md from xz_laptop_pic where laptop_id=lid limit 1)
 		as md from xz_laptop where lid=$lid";
 	$result=mysqli_query($conn,$sql);
@@ -72,9 +72,8 @@ function getProductById(){
 	family_id=$fid";
 	$result=mysqli_query($conn,$sql);
 	$output["family"]=mysqli_fetch_all($result,1);
-	$sql="select sm from xz_laptop_pic where laptop_id=$lid";
+	$sql="select sm,md,lg from xz_laptop_pic where laptop_id=$lid";
 	$result=mysqli_query($conn,$sql);
-	$output["product"]["imgs"]=mysqli_fetch_all($result,1);
-	var_dump($output);
-	//echo json_encode($output);
+	$output["imgs"]=mysqli_fetch_all($result,1);
+	echo json_encode($output);
 }
