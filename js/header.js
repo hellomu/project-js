@@ -8,7 +8,6 @@
 			type:"get",
 			url:"data/routes/users/isLogin.php"
 		}).then(data=>{//data:{ok:1,uname:xxx}
-			console.log(data.ok);
 			if(data.ok==1){
 				loginList.style.display="none";
 				welcomeList.style.display="block";
